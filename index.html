@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+  body {
+    background-color: #9ec4d1;
+    margin: 10px 10px 10px;
+    padding: 20px 170px 170px;
+    padding-top: 100px;
+  }
+  h2 {
+    background-color: #3b687a;
+    color: white;
+    font-family: sans-serif;
+    font-style: normal;
+    padding-left: 320px;
+  }
+  .center {
+    text-align: center;
+  }
+.center2 {
+  padding-left: 380px;
+  }
+  .container2 {
+    margin-top: 200px;
+  }
+  #myProgress {
+    width: 100%;
+    background-color: #3a5f6d;
+  }
+
+  #myBar {
+    width: 1%;
+    height: 30px;
+    background-color: #66c2ff;
+  }
+</style>
+</head>
+<body>
+  <br>
+  <fieldset>
+    <img src="Logo ITK.png" class="center2" height="250" weidht="250"alt="">
+    <h2>Institut Teknologi Kalimantan</h2>
+
+    <div class="center">
+      <br>
+      
+      <!-- Button trigger modal -->
+      <button type="button" onclick="move()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Here</button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content container2">
+            <div class="modal-body">
+              <h5 class="modal-title" id="exampleModalLabel"><span style="text-align: center;">Please Wait..</span></h5>
+              <div id="myProgress">
+                <div id="myBar">10%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </fieldset>
+
+  <script>
+    function move() {
+      var elem = document.getElementById("myBar");   
+      var width = 10;
+      var id = setInterval(frame, 50);
+      function frame() {
+        if (width >= 100) {
+          clearInterval(id);
+          window.location.assign("https://itk.ac.id")
+        } else {
+          width++; 
+          elem.style.width = width + '%'; 
+          elem.innerHTML = width * 1  + '%';
+        }
+      }
+    }
+  </script>
+  <script src="jquery/jquery-2.2.4.min.js"></script>
+  <script src="jquery/main.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+</body>
+</html>
